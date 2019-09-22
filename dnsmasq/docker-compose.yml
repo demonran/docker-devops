@@ -6,6 +6,8 @@ services:
     restart: always
     volumes:
       - ./conf/dnsmasq.conf:/etc/dnsmasq.conf
+      - ./conf/dnsmasq.hosts:/etc/dnsmasq.hosts
+      - ./conf/dnsmasq.resolv.conf:/etc/dnsmasq.resolv.conf
     environment:
       - "HTTP_USER=admin"
       - "HTTP_PASS=admin"
