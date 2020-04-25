@@ -7,6 +7,6 @@ services:
       - "LAM_SKIP_PRECONFIGURE=true"
     volumes:
       - "./data/config/config.cfg:/etc/ldap-account-manager/config.cfg"
-      - "./data/config/lam.conf:/var/lib/ldap-account-manager/config/lam.conf
+      - "./data/config/lam.conf:/var/lib/ldap-account-manager/config/lam.conf"
     ports:
       - "18080:80"
