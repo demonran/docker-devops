@@ -1,6 +1,6 @@
 version: '2'
 services:
-  mysql:
+  ldap:
     image: ldapaccountmanager/lam:stable
     restart: always
     environment:
