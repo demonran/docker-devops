@@ -3,6 +3,7 @@
 
 import os
 import json
+import time
 from urllib.request import urlopen
 from aliyunsdkcore.client import AcsClient
 from aliyunsdkalidns.request.v20150109 import DescribeDomainRecordsRequest
@@ -46,6 +47,7 @@ class DnsHandler:
     # 如果公网IP发生变化，则自动修改阿里云解析记录
     def reset(self):
         if self.current_ip != self.get_record_value():
+            print("ip changed :" + "new_ip:"  + self.current_ip + "old_ip:" + self.get_record_value())
             self.update_record(self.current_ip)
 
 
@@ -94,5 +96,7 @@ class DnsHandler:
 
 
 # 实例化类并启动更新程序
+print("exec ddns start: " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
 dns = DnsHandler()
 dns.reset()
+print("exec ddns end: " + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
