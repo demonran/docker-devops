@@ -46,8 +46,6 @@ class DnsHandler:
     # 如果公网IP发生变化，则自动修改阿里云解析记录
     def reset(self):
         if self.current_ip != self.get_record_value():
-            print(self.current_ip)
-            print(self.get_record_value())
             self.update_record(self.current_ip)
 
 
@@ -64,7 +62,7 @@ class DnsHandler:
             request.set_DomainName(self.domain_name)
             request.set_RRKeyWord(self.rr_keyword)
             request.set_TypeKeyWord(self.record_type)
-            r = str(self.client.do_action_with_exception(request), encoding="utf-8")
+            r = self.client.do_action_with_exception(request).decode()
             print(r)
             file_handler = open(self.file_name, 'w')
             file_handler.write(r)
