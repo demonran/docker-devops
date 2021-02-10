@@ -3,7 +3,7 @@ aliyun-python-sdk-core==2.13.30
 aliyun-python-sdk-domain==3.14.4
 cffi==1.14.4
 configparser==5.0.1
-cryptography==3.2.1
+cryptography==3.3.2
 jmespath==0.10.0
 pycparser==2.20
 six==1.15.0
